@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | JinsongWu</title>
+  <title>stl学习(一) | JinsongWu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JinsongWu">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="stl学习(一)学习c++的路还很长来记录一下学习中遇到的一些有用的东西。  下面的例子展示的是vector的逆向取值的方式（用出python的感觉2333）  12345678910111213141516void teststl() &amp;#123;	vector&amp;lt;int&amp;gt; arr(5, 0);//初始化vector数组长度为5，赋值为0	iota(arr.begin(), arr.e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stl学习(一)">
+<meta property="og:url" content="http://yoursite.com/2019/12/08/stl学习-一/index.html">
 <meta property="og:site_name" content="JinsongWu">
+<meta property="og:description" content="stl学习(一)学习c++的路还很长来记录一下学习中遇到的一些有用的东西。  下面的例子展示的是vector的逆向取值的方式（用出python的感觉2333）  12345678910111213141516void teststl() &amp;#123;	vector&amp;lt;int&amp;gt; arr(5, 0);//初始化vector数组长度为5，赋值为0	iota(arr.begin(), arr.e">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/12/08/stl学习-一/img/stl_result1.jpg">
+<meta property="og:updated_time" content="2019-12-08T02:28:01.424Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JinsongWu">
+<meta name="twitter:title" content="stl学习(一)">
+<meta name="twitter:description" content="stl学习(一)学习c++的路还很长来记录一下学习中遇到的一些有用的东西。  下面的例子展示的是vector的逆向取值的方式（用出python的感觉2333）  12345678910111213141516void teststl() &amp;#123;	vector&amp;lt;int&amp;gt; arr(5, 0);//初始化vector数组长度为5，赋值为0	iota(arr.begin(), arr.e">
+<meta name="twitter:image" content="http://yoursite.com/2019/12/08/stl学习-一/img/stl_result1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="JinsongWu" type="application/atom+xml">
   
@@ -162,124 +168,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="[c++]-stl学习-一" class="article article-type-[c++] " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      stl学习(一)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-[c++]">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/08/stl学习-一/" class="archive-article-date">
+
+        
+        <a href="/2019/12/08/stl学习-一/" class="archive-article-date">
   	<time datetime="2019-12-08T01:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/08/stl学习-一/">stl学习(一)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="stl学习-一"><a href="#stl学习-一" class="headerlink" title="stl学习(一)"></a>stl学习(一)</h1><p>学习c++的路还很长来记录一下学习中遇到的一些有用的东西。</p>
+<blockquote>
+<p>下面的例子展示的是vector的逆向取值的方式（用出python的感觉2333）</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">teststl</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr(<span class="number">5</span>, <span class="number">0</span>);<span class="comment">//初始化vector数组长度为5，赋值为0</span></span><br><span class="line">	iota(arr.begin(), arr.end(), <span class="number">100</span>);<span class="comment">//从100开始取，后面的依次加一</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"赋值后的arr数组: "</span>;</span><br><span class="line">	ostream_iterator&lt;<span class="keyword">int</span>&gt;out(<span class="built_in">cout</span>, <span class="string">" "</span>);</span><br><span class="line">	<span class="comment">//此处的间隔符加在每一个元素的后面</span></span><br><span class="line">	copy(arr.begin(), arr.end(), out);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;	</span><br><span class="line">	<span class="comment">//类似于python的逆向取值</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"倒数第二个数字："</span> &lt;&lt; arr.end()[<span class="number">-2</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	teststl();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<blockquote>
+<p>运行结果如下图：</p>
+</blockquote>
+<p><img src="img/stl_result1.jpg" alt="result"></p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/08/stl学习-一/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-[随笔]">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/07/学期结束/" class="archive-article-date">
-  	<time datetime="2019-12-07T03:45:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/07/学期结束/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学期结束</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/07/学期结束/">学期结束</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/01/newtest/" class="archive-article-date">
-  	<time datetime="2019-08-01T11:45:26.384Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/25/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-25T06:12:23.441Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/25/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -302,8 +349,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

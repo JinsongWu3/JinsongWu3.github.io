@@ -164,6 +164,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="[c++]-stl学习-一" class="article article-type-[c++]  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/08/stl学习-一/">stl学习(一)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/08/stl学习-一/" class="archive-article-date">
+  	<time datetime="2019-12-08T01:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="stl学习-一"><a href="#stl学习-一" class="headerlink" title="stl学习(一)"></a>stl学习(一)</h1><p>学习c++的路还很长来记录一下学习中遇到的一些有用的东西。</p>
+<blockquote>
+<p>下面的例子展示的是vector的逆向取值的方式（用出python的感觉2333）</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">teststl</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; arr(<span class="number">5</span>, <span class="number">0</span>);<span class="comment">//初始化vector数组长度为5，赋值为0</span></span><br><span class="line">	iota(arr.begin(), arr.end(), <span class="number">100</span>);<span class="comment">//从100开始取，后面的依次加一</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"赋值后的arr数组: "</span>;</span><br><span class="line">	ostream_iterator&lt;<span class="keyword">int</span>&gt;out(<span class="built_in">cout</span>, <span class="string">" "</span>);</span><br><span class="line">	<span class="comment">//此处的间隔符加在每一个元素的后面</span></span><br><span class="line">	copy(arr.begin(), arr.end(), out);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;	</span><br><span class="line">	<span class="comment">//类似于python的逆向取值</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"倒数第二个数字："</span> &lt;&lt; arr.end()[<span class="number">-2</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	teststl();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>运行结果如下图：</p>
+</blockquote>
+<p><img src="img/stl_result1.jpg" alt="result"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/08/stl学习-一/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="[随笔]-学期结束" class="article article-type-[随笔]  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
